@@ -99,6 +99,13 @@
 
         <intentionAction>
             <language>Scala</language>
+            <className>org.jetbrains.plugins.scala.codeInsight.intention.declarations.ConvertMemberToExtensionIntention</className>
+            <categoryKey>intention.category.scala</categoryKey>
+            <bundleName>messages.ScalaCodeInsightBundle</bundleName>
+        </intentionAction>
+
+        <intentionAction>
+            <language>Scala</language>
             <categoryKey>intention.category.scala.argument.conversion</categoryKey>
             <bundleName>messages.ScalaCodeInsightBundle</bundleName>
             <className>org.jetbrains.plugins.scala.codeInsight.intention.argument.AddNameToArgumentIntention</className>

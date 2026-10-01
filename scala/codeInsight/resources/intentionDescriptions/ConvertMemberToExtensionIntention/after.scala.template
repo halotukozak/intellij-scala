@@ -1,0 +1,6 @@
+class Box[T](val value: T)
+
+object Box {
+  extension [T](box: Box[T]) def describe(prefix: String): String =
+    <spot>prefix + box.value</spot>
+}

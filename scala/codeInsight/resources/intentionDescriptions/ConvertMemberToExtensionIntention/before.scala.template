@@ -1,0 +1,4 @@
+class Box[T](val value: T) {
+  def <spot>describe</spot>(prefix: String): String =
+    prefix + value
+}
