@@ -871,6 +871,13 @@
 
         <intentionAction>
             <language>Scala</language>
+            <categoryKey>intention.category.scala.pattern.matching</categoryKey>
+            <bundleName>messages.ScalaCodeInsightBundle</bundleName>
+            <className>org.jetbrains.plugins.scala.codeInsight.intention.matcher.AddRemainingCasesIntention</className>
+        </intentionAction>
+
+        <intentionAction>
+            <language>Scala</language>
             <categoryKey>intention.category.scala</categoryKey>
             <bundleName>messages.ScalaCodeInsightBundle</bundleName>
             <className>org.jetbrains.plugins.scala.codeInsight.intention.types.ConvertImplicitBoundsToImplicitParameter</className>

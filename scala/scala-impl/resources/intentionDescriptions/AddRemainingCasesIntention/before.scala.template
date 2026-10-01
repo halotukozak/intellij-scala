@@ -1,0 +1,9 @@
+sealed trait Direction
+case object North extends Direction
+case object East extends Direction
+case object South extends Direction
+
+def usage(direction: Direction): Int = direction <spot>match</spot> {
+  case North => 1
+  case _ => 0
+}

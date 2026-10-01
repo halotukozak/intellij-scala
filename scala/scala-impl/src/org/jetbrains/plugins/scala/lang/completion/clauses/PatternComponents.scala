@@ -53,6 +53,12 @@ sealed abstract class ClassPatternComponents(`class`: PsiClass,
   override final def canonicalPatternText: String =
     namedPatternText(Left(qualifiedName))
 
+  /** The class (or object) whose instances this pattern matches. */
+  final def targetClass: PsiClass = `class`
+
+  /** Qualified name of the matched value, differs from the [[targetClass]] name for enumeration constants. */
+  final def targetQualifiedName: String = qualifiedName
+
   def presentablePatternText(reference: Either[String, ScStableCodeReference] = Left(`class`.name)): String =
     presentablePrefix(reference)
 
