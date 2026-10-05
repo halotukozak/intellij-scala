@@ -1,0 +1,6 @@
+import java.util.concurrent.<spot>TimeUnit</spot>
+
+object Example {
+  val unit = <spot>TimeUnit</spot>.SECONDS
+  def toMillis(u: <spot>TimeUnit</spot>, n: Long) = u.toMillis(n)
+}

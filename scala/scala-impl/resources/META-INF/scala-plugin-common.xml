@@ -941,6 +941,13 @@
 
         <intentionAction>
             <language>Scala</language>
+            <categoryKey>intention.category.scala.import</categoryKey>
+            <bundleName>messages.ScalaCodeInsightBundle</bundleName>
+            <className>org.jetbrains.plugins.scala.codeInsight.intention.imports.IntroduceImportAliasIntention</className>
+        </intentionAction>
+
+        <intentionAction>
+            <language>Scala</language>
             <categoryKey>intention.category.scala.expressions</categoryKey>
             <bundleName>messages.ScalaCodeInsightBundle</bundleName>
             <className>org.jetbrains.plugins.scala.codeInsight.intention.expression.ConvertFromInfixExpressionIntention</className>
