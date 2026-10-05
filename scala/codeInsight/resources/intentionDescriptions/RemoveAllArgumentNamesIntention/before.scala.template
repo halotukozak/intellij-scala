@@ -1,0 +1,3 @@
+def foo(a: Int, b: Int, c: Int): Unit = ()
+
+foo(<spot>c = 3, a = 1, b = 2</spot>)
