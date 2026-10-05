@@ -28,6 +28,14 @@
                                  order="first"/>
 
         <config.inlaySettingsProvider implementation="org.jetbrains.plugins.scala.codeInsight.hints.ScalaInlayHintsSettingsProvider" />
+        <codeInsight.declarativeInlayProvider language="Scala"
+                                              implementationClass="org.jetbrains.plugins.scala.codeInsight.hints.lambdas.ScalaLambdaReturnHintsProvider"
+                                              isEnabledByDefault="false"
+                                              group="LAMBDAS_GROUP"
+                                              providerId="scala.lambda.return.hints"
+                                              bundle="messages.ScalaCodeInsightBundle"
+                                              nameKey="lambda.return.hints"
+                                              descriptionKey="lambda.return.hints.description"/>
 
         <editorFactoryListener implementation="org.jetbrains.plugins.scala.codeInsight.hints.ScalaEditorFactoryListener"/>
 
