@@ -1,0 +1,4 @@
+def describe(n: Int): String =
+  if (n == 1) "one"
+  else if (n == 2 || n == 3) "two or three"
+  else "many"

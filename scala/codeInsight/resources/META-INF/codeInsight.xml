@@ -192,6 +192,20 @@
             <language>Scala</language>
             <categoryKey>intention.category.scala.control.flow</categoryKey>
             <bundleName>messages.ScalaCodeInsightBundle</bundleName>
+            <className>org.jetbrains.plugins.scala.codeInsight.intention.controlFlow.IfToMatchIntention</className>
+        </intentionAction>
+
+        <intentionAction>
+            <language>Scala</language>
+            <categoryKey>intention.category.scala.control.flow</categoryKey>
+            <bundleName>messages.ScalaCodeInsightBundle</bundleName>
+            <className>org.jetbrains.plugins.scala.codeInsight.intention.controlFlow.MatchToIfIntention</className>
+        </intentionAction>
+
+        <intentionAction>
+            <language>Scala</language>
+            <categoryKey>intention.category.scala.control.flow</categoryKey>
+            <bundleName>messages.ScalaCodeInsightBundle</bundleName>
             <className>org.jetbrains.plugins.scala.codeInsight.intention.controlFlow.MergeElseIfIntention</className>
         </intentionAction>
 

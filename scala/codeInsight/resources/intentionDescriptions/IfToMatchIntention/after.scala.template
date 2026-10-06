@@ -1,0 +1,6 @@
+def describe(n: Int): String =
+  n match {
+    case 1 => "one"
+    case 2 | 3 => "two or three"
+    case _ => "many"
+  }

@@ -1,0 +1,10 @@
+<html>
+<body>
+<p>Converts a <b>match</b> expression, whose cases contain only literals, stable identifiers,
+    type tests, alternatives and wildcards, to an equivalent <b>if</b>-<b>else if</b>-<b>else</b> chain.
+    Guards are joined to the conditions with <code>&amp;&amp;</code>.</p>
+<p>A scrutinee other than a literal or a path to a value (e.g. a method call) is first stored in a local
+    <b>val</b>, so that it is still evaluated only once. If the <b>match</b> is not a statement of a block
+    (e.g. it is the whole body of a method), the <b>val</b> and the <b>if</b> chain are wrapped in a new block.</p>
+</body>
+</html>
