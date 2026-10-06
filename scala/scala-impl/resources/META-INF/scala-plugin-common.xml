@@ -1477,6 +1477,12 @@
                          groupPath="Scala" groupKey="group.syntactic.simplification"
                          shortName="ScalaUnnecessarySemicolon" level="WARNING" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES"
                          enabledByDefault="true" language="Scala"/>
+        <localInspection implementationClass="org.jetbrains.plugins.scala.codeInspection.assignment.ScalaOperatorAssignmentInspection"
+                         bundle="messages.ScalaInspectionBundle"
+                         key="displayname.simplify.reassignment"
+                         groupPath="Scala" groupKey="group.syntactic.simplification"
+                         shortName="ScalaOperatorAssignment" level="WEAK WARNING"
+                         enabledByDefault="true" language="Scala"/>
         <localInspection implementationClass="org.jetbrains.plugins.scala.codeInspection.syntacticSimplification.PostfixUnaryOperationInspection"
                          bundle="messages.ScalaInspectionBundle"
                          key="displayname.postfix.unary.operation"

@@ -1,0 +1,31 @@
+<html>
+<body>
+<p>Reports reassignments of variables that can be simplified with an assignment operator:</p>
+<ul>
+  <li><code>x = x op e</code> can be replaced with <code>x op= e</code>, for example <code>seq = seq :+ 4</code>
+    with <code>seq :+= 4</code>;</li>
+  <li><code>x = e op: x</code> with a right-associative operator can be replaced with <code>x op:= e</code>, for example
+    <code>list = 0 :: list</code> with <code>list ::= 0</code>;</li>
+  <li><code>map = map.updated(k, v)</code> on an immutable map can be replaced with <code>map += k -&gt; v</code>.</li>
+</ul>
+<p>The inspection is reported only when the assignment operator desugars into the very same reassignment, that is, when
+  the type of the variable has no <code>op=</code> method of its own (as, for example, mutable collections do).</p>
+<p>Use the option below to exclude right-associative operators.</p>
+<p>The quick-fix replaces the reassignment with an assignment operator.</p>
+<p><b>Example:</b></p>
+<pre><code>
+  var counter = 0
+  counter = counter + 2
+  var list = List(1, 2, 3)
+  list = 0 :: list
+</code></pre>
+<p>After the quick-fix is applied:</p>
+<pre><code>
+  var counter = 0
+  counter += 2
+  var list = List(1, 2, 3)
+  list ::= 0
+</code></pre>
+<!-- tooltip end -->
+</body>
+</html>
