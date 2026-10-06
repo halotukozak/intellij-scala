@@ -17,12 +17,17 @@ abstract class DefaultArgumentHintsTestBase extends InlayHintsTestBase {
    * Runs `body` in X-Ray mode with only the hints under test (and, optionally, parameter name hints) enabled,
    * so that the expected text is not cluttered by other X-Ray hints.
    */
-  protected def inXRayMode[T](showDefaultArguments: Boolean = true, showParameterNames: Boolean = false)(body: => T): T = {
+  protected def inXRayMode[T](
+    showDefaultArguments:          Boolean = true,
+    showInheritedDefaultArguments: Boolean = false,
+    showParameterNames:            Boolean = false
+  )(body: => T): T = {
     val settings = ScalaApplicationSettings.getInstance
     val codeInsightSettings = ScalaCodeInsightSettings.getInstance
 
     val oldXRayMode = ScalaHintsSettings.xRayMode
     val oldDefaultArguments = settings.XRAY_SHOW_DEFAULT_ARGUMENT_HINTS
+    val oldInheritedDefaultArguments = settings.XRAY_SHOW_INHERITED_DEFAULT_ARGUMENT_HINTS
     val oldParameterHints = settings.XRAY_SHOW_PARAMETER_HINTS
     val oldTypeHints = settings.XRAY_SHOW_TYPE_HINTS
     val oldApplyMethodHints = settings.XRAY_SHOW_APPLY_METHOD_HINTS
@@ -30,6 +35,7 @@ abstract class DefaultArgumentHintsTestBase extends InlayHintsTestBase {
     try {
       ScalaHintsSettings.xRayMode = true
       settings.XRAY_SHOW_DEFAULT_ARGUMENT_HINTS = showDefaultArguments
+      settings.XRAY_SHOW_INHERITED_DEFAULT_ARGUMENT_HINTS = showInheritedDefaultArguments
       settings.XRAY_SHOW_PARAMETER_HINTS = showParameterNames
       settings.XRAY_SHOW_TYPE_HINTS = false
       settings.XRAY_SHOW_APPLY_METHOD_HINTS = false
@@ -38,6 +44,7 @@ abstract class DefaultArgumentHintsTestBase extends InlayHintsTestBase {
     } finally {
       ScalaHintsSettings.xRayMode = oldXRayMode
       settings.XRAY_SHOW_DEFAULT_ARGUMENT_HINTS = oldDefaultArguments
+      settings.XRAY_SHOW_INHERITED_DEFAULT_ARGUMENT_HINTS = oldInheritedDefaultArguments
       settings.XRAY_SHOW_PARAMETER_HINTS = oldParameterHints
       settings.XRAY_SHOW_TYPE_HINTS = oldTypeHints
       settings.XRAY_SHOW_APPLY_METHOD_HINTS = oldApplyMethodHints

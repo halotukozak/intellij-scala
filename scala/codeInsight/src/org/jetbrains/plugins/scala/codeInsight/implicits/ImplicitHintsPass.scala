@@ -19,7 +19,7 @@ import org.jetbrains.plugins.scala.caches.{ModTracker, cachedInUserData}
 import org.jetbrains.plugins.scala.codeInsight.ScalaCodeInsightBundle
 import org.jetbrains.plugins.scala.codeInsight.hints.methodChains.ScalaMethodChainInlayHintsPass
 import org.jetbrains.plugins.scala.codeInsight.hints.rangeHints.RangeInlayHintsPass
-import org.jetbrains.plugins.scala.codeInsight.hints.{ScalaApplyMethodHintsPass, ScalaDefaultArgumentHintsPass, ScalaHintsSettings, ScalaInlayParameterHintsPass, ScalaTypeArgumentHintsPass, ScalaTypeHintsPass}
+import org.jetbrains.plugins.scala.codeInsight.hints.{ScalaApplyMethodHintsPass, ScalaDefaultArgumentHintsPass, ScalaHintsSettings, ScalaInheritedDefaultArgumentHintsPass, ScalaInlayParameterHintsPass, ScalaTypeArgumentHintsPass, ScalaTypeHintsPass}
 import org.jetbrains.plugins.scala.codeInsight.hints.textPartsOf
 import org.jetbrains.plugins.scala.codeInsight.implicits.ImplicitHintsPass._
 import org.jetbrains.plugins.scala.editor.documentationProvider.ScalaDocQuickInfoGenerator
@@ -58,6 +58,7 @@ class ImplicitHintsPass(
 ) with ScalaTypeHintsPass
   with ScalaInlayParameterHintsPass
   with ScalaDefaultArgumentHintsPass
+  with ScalaInheritedDefaultArgumentHintsPass
   with ScalaApplyMethodHintsPass
   with ScalaMethodChainInlayHintsPass
   with ScalaTypeArgumentHintsPass
@@ -82,6 +83,7 @@ class ImplicitHintsPass(
       hints ++= collectTypeHints(editor, rootElement)
       hints ++= collectParameterHints(editor, rootElement)
       hints ++= collectDefaultArgumentHints(editor, rootElement)
+      hints ++= collectInheritedDefaultArgumentHints(editor, rootElement)
       collectConversionsAndArguments()
       collectMethodChainHints(editor, rootElement)
       collectRangeHints(editor, rootElement)
