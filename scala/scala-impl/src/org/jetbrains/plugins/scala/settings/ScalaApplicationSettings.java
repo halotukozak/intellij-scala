@@ -103,6 +103,7 @@ public class ScalaApplicationSettings implements PersistentStateComponent<ScalaA
   public boolean XRAY_SHOW_PARAMETER_HINTS = true;
   public boolean XRAY_SHOW_ARGUMENT_HINTS = true;
   public boolean XRAY_SHOW_APPLY_METHOD_HINTS = true;
+  public boolean XRAY_SHOW_DEFAULT_ARGUMENT_HINTS = true;
   public boolean XRAY_SHOW_TYPE_HINTS = true;
   public boolean XRAY_SHOW_MEMBER_VARIABLE_HINTS = true;
   public boolean XRAY_SHOW_LOCAL_VARIABLE_HINTS = true;
