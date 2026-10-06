@@ -1,0 +1,6 @@
+def update(n: Int): Unit = {
+  <spot>state</spot> = n match {
+    case 0 => "zero"
+    case _ => "non-zero"
+  }
+}

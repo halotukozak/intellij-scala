@@ -1,0 +1,32 @@
+<html>
+<body>
+<p>Reports <code>if</code>, <code>match</code>, and <code>try</code> statements that can be converted to expressions
+  by lifting the <code>return</code> statement or an assignment out.</p>
+<p>Every branch must end with a <code>return</code>, or with an assignment to the same variable.
+  Branches ending with <code>throw</code> are left as they are.</p>
+<p><b>Example:</b></p>
+<pre><code>
+  def describe(n: Int): String = {
+    n match {
+      case 0 => return "zero"
+      case 1 => return "one"
+      case _ => return "many"
+    }
+  }
+</code></pre>
+<p>After the quick-fix is applied:</p>
+<pre><code>
+  def describe(n: Int): String = {
+    return n match {
+      case 0 => "zero"
+      case 1 => "one"
+      case _ => "many"
+    }
+  }
+</code></pre>
+<p>If you would like this inspection to highlight more complex code with multi-statement branches,
+  uncheck the option "Report only if each branch is a single statement".</p>
+<p>The reverse conversion is available as the <i>Unfold return or assignment into 'if', 'match' or 'try' branches</i> intention.</p>
+<!-- tooltip end -->
+</body>
+</html>

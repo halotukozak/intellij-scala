@@ -90,6 +90,15 @@
                 language="Scala" level="WARNING"
                 enabledByDefault="true"/>
 
+        <localInspection
+                implementationClass="org.jetbrains.plugins.scala.codeInspection.controlFlow.ScalaLiftReturnOrAssignmentInspection"
+                bundle="messages.ScalaCodeInsightBundle"
+                key="lift.return.or.assignment.display.name"
+                groupPath="Scala" groupBundle="messages.ScalaInspectionBundle" groupKey="group.code.style"
+                shortName="ScalaLiftReturnOrAssignment"
+                language="Scala" level="WEAK WARNING"
+                enabledByDefault="true"/>
+
         <intentionAction>
             <language>Scala</language>
             <className>org.jetbrains.plugins.scala.codeInsight.intention.declarations.ChangeAccessModifierIntention</className>
@@ -242,6 +251,13 @@
             <categoryKey>intention.category.scala.control.flow</categoryKey>
             <bundleName>messages.ScalaCodeInsightBundle</bundleName>
             <className>org.jetbrains.plugins.scala.codeInsight.intention.controlFlow.SplitIfIntention</className>
+        </intentionAction>
+
+        <intentionAction>
+            <language>Scala</language>
+            <categoryKey>intention.category.scala.control.flow</categoryKey>
+            <bundleName>messages.ScalaCodeInsightBundle</bundleName>
+            <className>org.jetbrains.plugins.scala.codeInsight.intention.controlFlow.UnfoldReturnOrAssignmentIntention</className>
         </intentionAction>
 
         <intentionAction>
